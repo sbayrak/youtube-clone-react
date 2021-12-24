@@ -1,11 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Outlet, Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [openModal, setOpenModal] = useState(false);
+  const bgRef = useRef();
 
   const mobileHandleSearchModal = () => {
     setOpenModal(!openModal);
+  };
+
+  const mobileHandleClose = (e) => {
+    console.log(e.target);
+
+    console.log(bgRef);
   };
 
   return (
@@ -14,7 +21,7 @@ const Navbar = () => {
         {/* DESKTOP STARTS */}
         <div className='container desktop'>
           <div className='row n_row'>
-            <div className='col-2'>
+            <div className='col-3 laptop-left'>
               <button className='n_button'>
                 <img src='/menu.svg' alt='youtube_menu' width='30' />
               </button>
@@ -22,7 +29,6 @@ const Navbar = () => {
                 <img src='./yt-icon.svg' alt='youtube_icon' width='125' />
               </Link>
             </div>
-            <div className='col-1'></div>
             <div className='col-6'>
               <div className='n_search-wrapper'>
                 <div className='n_search'>
@@ -75,9 +81,8 @@ const Navbar = () => {
                 </button>
               </div>
             </div>
-            <div className='col-1'></div>
 
-            <div className='col-2 n_right'>
+            <div className='col-3 n_right'>
               <div className='left'>
                 <button>
                   <img src='./camera.svg' alt='youtube.svg' />
@@ -130,6 +135,8 @@ const Navbar = () => {
           <div
             className='m_modal'
             style={{ display: `${openModal ? 'inline' : 'none'}` }}
+            onClick={mobileHandleSearchModal}
+            ref={bgRef}
           >
             <div className='m_wrapper'>
               <div className='container'>
@@ -152,12 +159,14 @@ const Navbar = () => {
                     </div>
                   </div>
                   <div className='col-3'>
-                    <button>
-                      <img src='./search.svg' alt='youtube_search' />
-                    </button>
-                    <button className='n_search_mic'>
-                      <img src='./mic.svg' alt='youtube_mic' />
-                    </button>
+                    <div className='m_right'>
+                      <button>
+                        <img src='./search.svg' alt='youtube_search' />
+                      </button>
+                      <button className='n_search_mic'>
+                        <img src='./mic.svg' alt='youtube_mic' />
+                      </button>
+                    </div>
                   </div>
                 </div>
 
