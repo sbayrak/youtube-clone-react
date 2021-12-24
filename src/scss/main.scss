@@ -1,4 +1,7 @@
 @import './general/variables';
 @import './general/reset';
 
+@import './components/mixins';
 @import './components/home';
+
+@import './layout/navbar';

@@ -1,0 +1,89 @@
+.n_container {
+  border: 1px solid blue;
+  .container {
+    max-width: 98%;
+
+    .n_row {
+      display: flex;
+      align-items: center;
+
+      .n_button {
+        @include button($padding: 0.3rem);
+      }
+
+      .n_search-wrapper {
+        display: flex;
+
+        .n_search {
+          position: relative;
+          width: 90%;
+          border: 2px solid $active;
+          border-radius: 3px;
+
+          input {
+            width: 90%;
+            outline: none;
+            border-radius: 3px;
+            padding: 0.5rem 1rem;
+          }
+          button {
+            width: 10%;
+            min-height: 100%;
+            border: 2px solid $active;
+            border-top: none;
+            border-bottom: none;
+            border-right: none;
+            padding: 0.5rem 1rem;
+            background-color: $bg-color;
+          }
+
+          .results {
+            position: absolute;
+            width: 90%;
+            margin: 0 auto;
+            border: 2px solid $active;
+            background-color: $bg-color;
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+            .wrapper {
+              padding: 1.2rem 0;
+              display: flex;
+              flex-direction: column;
+              a {
+                padding: 0.3rem 0.5rem;
+                text-decoration: none;
+                color: $text-color;
+                &:hover {
+                  background-color: $active;
+                }
+                span {
+                  font-weight: 600;
+                }
+              }
+            }
+          }
+        }
+        .n_search_mic {
+          @include button($padding: 0.5rem);
+        }
+      }
+      .n_right {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .left {
+          button {
+            @include button($padding: 0.4rem);
+            margin-left: 0.5rem;
+          }
+        }
+
+        .right {
+          button {
+            @include button($padding: 0.4rem);
+          }
+        }
+      }
+    }
+  }
+}
