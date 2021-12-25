@@ -1,0 +1,8 @@
+.s_container {
+  position: fixed;
+  top: 15%;
+  .s_wrapper {
+    max-height: 80vh;
+    overflow-y: scroll;
+  }
+}

@@ -1,3 +1,23 @@
-.home {
+.h_container {
   border: 1px solid red;
+  max-width: 100%;
+  min-width: 100%;
+  margin-top: 80px;
+
+  .h_wrapper {
+    border: 1px solid blue;
+    min-width: 100%;
+    display: flex;
+
+    .h_sidebar {
+      border: 1px solid red;
+      width: 15%;
+    }
+
+    .h_main {
+      border: 1px solid red;
+      width: 85%;
+      height: 200vh;
+    }
+  }
 }
