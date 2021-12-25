@@ -1,8 +1,57 @@
 .s_container {
   position: fixed;
-  top: 15%;
+  top: 12%;
+  left: 0;
+  background-color: $bg-color;
+  width: inherit;
+
   .s_wrapper {
-    max-height: 80vh;
-    overflow-y: scroll;
+    max-height: 90vh;
+    overflow-y: auto;
+    width: 100%;
+
+    .s_rows {
+      display: flex;
+      flex-direction: column;
+
+      hr {
+        opacity: 0.1;
+      }
+
+      .s_row {
+        display: flex;
+        flex-direction: column;
+
+        a {
+          text-decoration: none;
+          width: 100%;
+          padding: 0.5rem 1.2rem;
+          transition: 100ms ease;
+          color: $text-color;
+
+          &:hover {
+            background-color: rgba($color: $grey100, $alpha: 0.1);
+          }
+        }
+        a.active {
+          background-color: rgba($color: $grey200, $alpha: 0.5);
+        }
+        img {
+          padding-right: 1.5rem;
+        }
+        span {
+          font-size: 0.875rem;
+        }
+        span.active {
+          font-weight: 600;
+        }
+
+        .title {
+          padding: 0.5rem 1.2rem;
+          font-weight: 500;
+          color: rgba($color: $grey500, $alpha: 1);
+        }
+      }
+    }
   }
 }
