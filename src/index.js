@@ -5,10 +5,13 @@ import reportWebVitals from './reportWebVitals';
 import './scss/main.scss';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap';
+import MenuState from './context/menu/MenuState';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <MenuState>
+      <App />{' '}
+    </MenuState>
   </React.StrictMode>,
   document.getElementById('root')
 );
