@@ -52,6 +52,28 @@
           color: rgba($color: $grey500, $alpha: 1);
         }
       }
+      .s_row.active {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        a {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          padding: 0.5rem 0;
+          margin-bottom: 0.5rem;
+
+          img {
+            padding-right: 0rem;
+            width: 1.5rem;
+          }
+          span {
+            font-size: 0.625rem;
+          }
+        }
+      }
     }
   }
 }

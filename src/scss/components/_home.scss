@@ -13,11 +13,17 @@
       width: 15%;
       position: relative;
     }
+    .h_sidebar.active {
+      width: 5%;
+    }
 
     .h_main {
       border: 1px solid red;
       width: 85%;
       height: 200vh;
+    }
+    .h_main.active {
+      width: 95%;
     }
   }
 }

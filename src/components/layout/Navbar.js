@@ -1,18 +1,14 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useContext } from 'react';
 import { Outlet, Link } from 'react-router-dom';
+import MenuContext from '../../context/menu/MenuContext';
 
 const Navbar = () => {
   const [openModal, setOpenModal] = useState(false);
   const bgRef = useRef();
+  const menuContext = useContext(MenuContext);
 
   const mobileHandleSearchModal = () => {
     setOpenModal(!openModal);
-  };
-
-  const mobileHandleClose = (e) => {
-    console.log(e.target);
-
-    console.log(bgRef);
   };
 
   return (
@@ -22,7 +18,12 @@ const Navbar = () => {
         <div className='container desktop'>
           <div className='row n_row'>
             <div className='col-3 laptop-left'>
-              <button className='n_button'>
+              <button
+                className='n_button'
+                onClick={() =>
+                  menuContext.handleMenuChange(menuContext.menuOpen)
+                }
+              >
                 <img src='/menu.svg' alt='youtube_menu' width='30' />
               </button>
               <Link to='/'>
