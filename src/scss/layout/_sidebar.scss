@@ -13,6 +13,7 @@
     .s_rows {
       display: flex;
       flex-direction: column;
+      position: relative;
 
       hr {
         opacity: 0.1;
@@ -50,6 +51,31 @@
           padding: 0.5rem 1.2rem;
           font-weight: 500;
           color: rgba($color: $grey500, $alpha: 1);
+        }
+
+        @media (max-width: 500px) {
+          flex-direction: row;
+          position: fixed;
+          bottom: 0;
+          left: 0;
+          background-color: $bg-color;
+          width: 100%;
+
+          img {
+            padding-right: 0rem;
+          }
+          span {
+            font-size: 0.6875rem;
+          }
+          .title {
+            font-weight: 400;
+          }
+          a {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+          }
         }
       }
       .s_row.active {
