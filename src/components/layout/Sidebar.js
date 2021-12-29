@@ -14,7 +14,10 @@ const Sidebar = () => {
   }, [window.innerWidth]);
 
   const mobileBottomMenu = (
-    <div className={`s_row`}>
+    <div
+      className={`s_row`}
+      style={{ display: `${screenWidth < 500 ? 'flex' : 'none'}` }}
+    >
       <Link to='/' className='active'>
         <img src='./home.svg' alt='youtube_home' />
         <span className='active'>Home</span>
@@ -41,13 +44,21 @@ const Sidebar = () => {
       <div className='s_wrapper'>
         {/* S_ROWS STARTS BELOW */}
         <div className='s_rows'>
-          {/* <div
+          <div
             className={`s_row${menuContext.menuOpen ? ' active' : ''}`}
-            style={{ display: `${menuContext.menuOpen ? 'inline' : 'none'}` }}
+            style={{
+              display: `${
+                menuContext.menuOpen
+                  ? screenWidth < 500
+                    ? 'none'
+                    : 'inline'
+                  : 'none'
+              }`,
+            }}
           >
             <Link to='/' className='active'>
               <img src='./home.svg' alt='youtube_home' />
-              <span className='active'>Home</span>
+              <span className='active'>Home1</span>
             </Link>
 
             <Link to='/'>
@@ -63,7 +74,7 @@ const Sidebar = () => {
               <img src='./library.svg' alt='youtube_library' />
               <span>Library</span>
             </Link>
-          </div> */}
+          </div>
           {mobileBottomMenu}
 
           {screenWidth > 500 && (
