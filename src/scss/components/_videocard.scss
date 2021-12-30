@@ -1,0 +1,60 @@
+.v_container {
+  .v_wrapper {
+    .v_card {
+      .v_img {
+        position: relative;
+
+        a {
+          text-decoration: none;
+
+          .thumbnail {
+            width: 100%;
+          }
+          .hoverItems {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: #fff;
+          }
+          span {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            color: $bg-color;
+            font-size: 0.75rem;
+            margin: 0.25rem;
+            padding: 0.025rem 0.4rem;
+            border-radius: 2px;
+            background-color: rgba($color: #000, $alpha: 0.9);
+          }
+        }
+      }
+
+      .v_title {
+        margin-top: 0.5rem;
+        .channelLogo {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        .title {
+          a {
+            font-size: 0.875rem;
+            text-decoration: none;
+            color: $grey900;
+            font-weight: 500;
+          }
+        }
+
+        .bottomTypo {
+          a {
+            text-decoration: none;
+            font-size: 0.75rem;
+            font-weight: 400;
+            color: $grey500;
+          }
+        }
+      }
+    }
+  }
+}

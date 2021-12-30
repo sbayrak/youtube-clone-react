@@ -1,5 +1,4 @@
 .h_container {
-  border: 1px solid green;
   max-width: 100%;
   min-width: 100%;
   margin-top: 80px;
@@ -18,9 +17,15 @@
     }
 
     .h_main {
-      border: 1px solid red;
+      border: 2px solid red;
       width: 85%;
       height: 200vh;
+
+      .home {
+        .v_root {
+          width: 100%;
+        }
+      }
     }
     .h_main.active {
       width: 95%;

@@ -1,6 +1,7 @@
 import React, { useContext, useState, useEffect } from 'react';
 import Sidebar from '../layout/Sidebar';
 import MenuContext from '../../context/menu/MenuContext';
+import VideoCard from '../reusable/VideoCard';
 
 const Home = () => {
   const menuContext = useContext(MenuContext);
@@ -53,6 +54,24 @@ const Home = () => {
         >
           <div className='home'>
             <p>Home page</p>
+            <div className='v_root'>
+              <div className='container-fluid gx-4'>
+                <div className='row gx-3'>
+                  <div className='col-3'>
+                    <VideoCard></VideoCard>
+                  </div>
+                  <div className='col-3'>
+                    <VideoCard></VideoCard>
+                  </div>
+                  <div className='col-3'>
+                    <VideoCard></VideoCard>
+                  </div>
+                  <div className='col-3'>
+                    <VideoCard></VideoCard>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
