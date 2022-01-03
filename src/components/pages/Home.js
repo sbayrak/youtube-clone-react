@@ -3,17 +3,17 @@ import Sidebar from '../layout/Sidebar';
 import MenuContext from '../../context/menu/MenuContext';
 import VideoCard from '../reusable/VideoCard';
 import VideoContext from '../../context/video/VideoContext';
+import Skeleton from '../reusable/Skeleton';
 
 const Home = () => {
   const menuContext = useContext(MenuContext);
   const videoContext = useContext(VideoContext);
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
-  const [data, setData] = useState({});
 
-  useEffect(() => {
-    videoContext.getPopularVideos();
-  }, []);
-  console.log(videoContext);
+  // useEffect(() => {
+  //   videoContext.getPopularVideos();
+  // }, []);
+  // console.log(videoContext);
 
   useEffect(() => {
     window.addEventListener('resize', () => {
@@ -23,20 +23,6 @@ const Home = () => {
 
     if (screenWidth < 500) menuContext.handleMenuChange(menuContext.menuOpen);
   }, [window.innerWidth]);
-
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     const result = await fetch(
-  //       `https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&regionCode=US&maxResults=10&key=${process.env.REACT_APP_YOUTUBE_APIKEY}`
-  //     );
-
-  //     const result2 = await result.json();
-  //     setData(result2);
-  //   };
-  //   fetchData();
-  // }, []);
-
-  // console.log(data);
 
   return (
     <div className='h_container'>
@@ -78,16 +64,20 @@ const Home = () => {
               <div className='container-fluid gx-4'>
                 <div className='row gx-3 my-5'>
                   <div className='col-3'>
-                    <VideoCard></VideoCard>
+                    {/* <VideoCard></VideoCard> */}
+                    <Skeleton></Skeleton>
                   </div>
                   <div className='col-3'>
-                    <VideoCard></VideoCard>
+                    {/* <VideoCard></VideoCard> */}
+                    <Skeleton></Skeleton>
                   </div>
                   <div className='col-3'>
-                    <VideoCard></VideoCard>
+                    {/* <VideoCard></VideoCard> */}
+                    <Skeleton></Skeleton>
                   </div>
                   <div className='col-3'>
-                    <VideoCard></VideoCard>
+                    {/* <VideoCard></VideoCard> */}
+                    <Skeleton></Skeleton>
                   </div>
                 </div>
               </div>

@@ -22,12 +22,14 @@
       height: 200vh;
       position: relative;
       overflow-x: scroll;
+      background-color: $bg-color;
 
       .home {
         position: relative;
         .v_root {
           width: 100%;
           position: relative;
+          background-color: $bg-color;
         }
       }
     }
