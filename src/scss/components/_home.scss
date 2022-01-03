@@ -17,13 +17,17 @@
     }
 
     .h_main {
-      border: 2px solid red;
-      width: 85%;
+      border: 2px solid blue;
+      min-width: 85%;
       height: 200vh;
+      position: relative;
+      overflow-x: scroll;
 
       .home {
+        position: relative;
         .v_root {
           width: 100%;
+          position: relative;
         }
       }
     }

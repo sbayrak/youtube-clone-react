@@ -6,12 +6,15 @@ import './scss/main.scss';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap';
 import MenuState from './context/menu/MenuState';
+import VideoState from './context/video/VideoState';
 
 ReactDOM.render(
   <React.StrictMode>
-    <MenuState>
-      <App />{' '}
-    </MenuState>
+    <VideoState>
+      <MenuState>
+        <App />
+      </MenuState>
+    </VideoState>
   </React.StrictMode>,
   document.getElementById('root')
 );

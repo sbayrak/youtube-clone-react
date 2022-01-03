@@ -11,10 +11,29 @@
             width: 100%;
           }
           .hoverItems {
+            width: 50%;
             position: absolute;
             top: 0;
             right: 0;
-            background-color: #fff;
+            border: 1px solid red;
+            display: flex;
+            flex-direction: column;
+            margin: 0.5rem;
+
+            .item {
+              border: 1px solid green;
+              margin-bottom: 0.5rem;
+              padding: 0.3rem;
+              background-color: rgba($color: #000, $alpha: 1);
+              position: relative;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+
+              .s_hover {
+                background-color: rgba($color: #000, $alpha: 1);
+              }
+            }
           }
           span {
             position: absolute;
@@ -43,6 +62,54 @@
             text-decoration: none;
             color: $grey900;
             font-weight: 500;
+          }
+        }
+
+        .v_dropdown {
+          position: relative;
+          opacity: 0;
+
+          &:hover {
+            opacity: 1;
+          }
+
+          .v_btn-dropdown {
+            @include button($padding: 0.3rem);
+          }
+
+          ul {
+            position: absolute;
+            padding: 0.4rem 0;
+            right: 0;
+            top: 100%;
+            background-color: #fff;
+            z-index: 99;
+            white-space: nowrap;
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+            border-radius: 3px;
+            li {
+              width: 100%;
+
+              hr {
+                opacity: 0.1;
+              }
+              a {
+                width: 100%;
+                display: inline-block;
+                padding: 0.4rem 1.5rem;
+                font-size: 0.875rem;
+                font-weight: 400;
+                color: $grey900;
+                text-decoration: none;
+                &:hover {
+                  background-color: rgba($color: #000, $alpha: 0.1);
+                }
+
+                img {
+                  margin-right: 1rem;
+                }
+              }
+            }
           }
         }
 

@@ -1,7 +1,51 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const VideoCard = () => {
+  const [openDropdown, setOpenDropdown] = useState(false);
+
+  const moreVertical = (
+    <ul>
+      <li>
+        <Link to='/'>
+          <img src='./addqueue.svg' alt='youtube_add_queue' />{' '}
+          <span>Add to queue</span>
+        </Link>
+      </li>
+      <li>
+        <Link to='/'>
+          <img src='./watchlater.svg' alt='youtube_watch_later' />{' '}
+          <span>Save to Watch later</span>
+        </Link>
+      </li>
+      <li>
+        <Link to='/'>
+          <img src='./playlistsave.svg' alt='youtube_playlist_save' />{' '}
+          <span>Save to playlist</span>
+        </Link>
+      </li>
+      <li>
+        <hr />
+      </li>
+      <li>
+        <Link to='/'>
+          <img src='./notinterested.svg' alt='youtube_not_interested' />{' '}
+          <span>Not interested</span>
+        </Link>
+      </li>
+      <li>
+        <Link to='/'>
+          <img src='./dontrecommend.svg' alt='youtube_dont_recommend' />{' '}
+          <span>Don't recommend channel</span>
+        </Link>
+      </li>
+      <li>
+        <Link to='/'>
+          <img src='./report.svg' alt='youtube_report' /> <span>Report</span>
+        </Link>
+      </li>
+    </ul>
+  );
   return (
     <div className='v_container'>
       <div className='v_wrapper'>
@@ -14,10 +58,16 @@ const VideoCard = () => {
                 className='thumbnail'
               />
 
-              <div className='hoverItems'>
-                <img src='./watchlater.svg' alt='youtube_watchlater' />
-                <img src='./library.svg' alt='youtube_library' />
-              </div>
+              {/* <div className='hoverItems'>
+                <div className='item'>
+                  <span className='s_hover'>WATCH LATER</span>
+                  <img src='./watchlater_white.svg' alt='youtube_watchlater' />
+                </div>
+                <div className='item'>
+                  <span className='s_hover'>ADD TO QUEUE</span>
+                  <img src='./library_white.svg' alt='youtube_library' />
+                </div>
+              </div> */}
 
               <span>10:59</span>
             </Link>
@@ -35,38 +85,15 @@ const VideoCard = () => {
                     <Link to='/'>ReactJS Tutorial Full Project</Link>
                   </div>
                 </div>
-                <div className='col-2 d-flex justify-content-center align-content-center'>
-                  <div className='card-dropdown'>
-                    <div className='dropdown me-1'>
-                      <button
-                        type='button'
-                        className='btn btn-secondary dropdown-toggle'
-                        id='dropdownMenuOffset'
-                        data-bs-toggle='dropdown'
-                        aria-expanded='false'
-                        data-bs-offset='10,20'
-                      ></button>
-                      <ul
-                        className='dropdown-menu'
-                        aria-labelledby='dropdownMenuOffset'
-                      >
-                        <li>
-                          <a className='dropdown-item' href='#'>
-                            Action
-                          </a>
-                        </li>
-                        <li>
-                          <a className='dropdown-item' href='#'>
-                            Another action
-                          </a>
-                        </li>
-                        <li>
-                          <a className='dropdown-item' href='#'>
-                            Something else here
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
+                <div className='col-2 d-flex justify-content-center align-content-center position-relative'>
+                  <div className='v_dropdown'>
+                    <button
+                      className='v_btn-dropdown'
+                      onClick={() => setOpenDropdown(!openDropdown)}
+                    >
+                      <img src='./morevert.svg' alt='youtube_morevert' />
+                    </button>
+                    {openDropdown && moreVertical}
                   </div>
                 </div>
               </div>
