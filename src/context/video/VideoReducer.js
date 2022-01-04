@@ -1,4 +1,4 @@
-import { GET_VIDEOS, ERROR_POPULAR_VID } from '../types';
+import { GET_VIDEOS, ERROR_POPULAR_VID, LOADING } from '../types';
 
 const VideoReducer = (state, action) => {
   switch (action.type) {
@@ -13,6 +13,11 @@ const VideoReducer = (state, action) => {
         error: action.payload,
       };
 
+    case LOADING:
+      return {
+        ...state,
+        loading: action.payload,
+      };
     default:
       break;
   }

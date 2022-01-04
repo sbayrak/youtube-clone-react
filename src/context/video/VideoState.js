@@ -1,4 +1,4 @@
-import { GET_VIDEOS, ERROR_POPULAR_VID } from '../types';
+import { GET_VIDEOS, ERROR_POPULAR_VID, LOADING } from '../types';
 import VideoReducer from './VideoReducer';
 import VideoContext from './VideoContext';
 import { useReducer } from 'react';
@@ -6,6 +6,7 @@ import { useReducer } from 'react';
 const initialState = {
   videos: [],
   error: {},
+  loading: true,
 };
 
 const VideoState = ({ children }) => {
@@ -15,8 +16,17 @@ const VideoState = ({ children }) => {
     const fetchData = await fetch(`${process.env.REACT_APP_POPULAR_VID}`);
     const data = await fetchData.json();
 
-    if (data.error) dispatch({ type: ERROR_POPULAR_VID, payload: data.error });
-    else if (data.items) dispatch({ type: GET_VIDEOS, payload: data });
+    // dispatch({ type: LOADING, payload: false });
+    // if (data.error) dispatch({ type: ERROR_POPULAR_VID, payload: data.error });
+    // else if (data.items) dispatch({ type: GET_VIDEOS, payload: data });
+
+    if (data.error) {
+      dispatch({ type: ERROR_POPULAR_VID, payload: data.error });
+      dispatch({ type: LOADING, payload: false });
+    } else if (data.items) {
+      dispatch({ type: GET_VIDEOS, payload: data });
+      dispatch({ type: LOADING, payload: false });
+    }
   };
 
   return (
@@ -24,6 +34,7 @@ const VideoState = ({ children }) => {
       value={{
         videos: state.videos,
         error: state.error,
+        loading: state.loading,
         getPopularVideos,
       }}
     >

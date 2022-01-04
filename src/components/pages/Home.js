@@ -10,10 +10,10 @@ const Home = () => {
   const videoContext = useContext(VideoContext);
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
-  // useEffect(() => {
-  //   videoContext.getPopularVideos();
-  // }, []);
-  // console.log(videoContext);
+  useEffect(() => {
+    videoContext.getPopularVideos();
+  }, []);
+  console.log(videoContext);
 
   useEffect(() => {
     window.addEventListener('resize', () => {
@@ -23,6 +23,53 @@ const Home = () => {
 
     if (screenWidth < 500) menuContext.handleMenuChange(menuContext.menuOpen);
   }, [window.innerWidth]);
+
+  const SkeletonQuantity = (
+    <>
+      <div className='col-3'>
+        <Skeleton />
+      </div>
+      <div className='col-3'>
+        <Skeleton />
+      </div>
+      <div className='col-3'>
+        <Skeleton />
+      </div>
+      <div className='col-3'>
+        <Skeleton />
+      </div>
+      <div className='col-3'>
+        <Skeleton />
+      </div>
+      <div className='col-3'>
+        <Skeleton />
+      </div>
+      <div className='col-3'>
+        <Skeleton />
+      </div>
+      <div className='col-3'>
+        <Skeleton />
+      </div>
+      <div className='col-3'>
+        <Skeleton />
+      </div>
+      <div className='col-3'>
+        <Skeleton />
+      </div>
+      <div className='col-3'>
+        <Skeleton />
+      </div>
+      <div className='col-3'>
+        <Skeleton />
+      </div>
+      <div className='col-3'>
+        <Skeleton />
+      </div>
+      <div className='col-3'>
+        <Skeleton />
+      </div>
+    </>
+  );
 
   return (
     <div className='h_container'>
@@ -63,22 +110,22 @@ const Home = () => {
             <div className='v_root'>
               <div className='container-fluid gx-4'>
                 <div className='row gx-3 my-5'>
-                  <div className='col-3'>
-                    {/* <VideoCard></VideoCard> */}
-                    <Skeleton></Skeleton>
-                  </div>
-                  <div className='col-3'>
-                    {/* <VideoCard></VideoCard> */}
-                    <Skeleton></Skeleton>
-                  </div>
-                  <div className='col-3'>
-                    {/* <VideoCard></VideoCard> */}
-                    <Skeleton></Skeleton>
-                  </div>
-                  <div className='col-3'>
-                    {/* <VideoCard></VideoCard> */}
-                    <Skeleton></Skeleton>
-                  </div>
+                  {videoContext.loading
+                    ? SkeletonQuantity
+                    : videoContext.videos.items.map((item, index) => (
+                        <div className='col-3' key={index}>
+                          <VideoCard item={item} />
+                        </div>
+                      ))}
+                  {/* {videoContext.videos.length > 0 ? (
+                    videoContext.videos.items.map((item, index) => (
+                      <div className='col-3' key={index}>
+                        <VideoCard item={item} />
+                      </div>
+                    ))
+                  ) : (
+                    <Skeleton />
+                  )} */}
                 </div>
               </div>
             </div>

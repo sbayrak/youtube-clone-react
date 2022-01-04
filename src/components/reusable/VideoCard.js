@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-const VideoCard = () => {
+const VideoCard = ({ item }) => {
   const [openDropdown, setOpenDropdown] = useState(false);
 
   const moreVertical = (
@@ -51,7 +51,7 @@ const VideoCard = () => {
       <div className='v_wrapper'>
         <div className='v_card'>
           <div className='v_img'>
-            <Link to='/'>
+            <Link to={`/watch?v=${item.id}`}>
               <img
                 src='./thumbnail.jpg'
                 alt='youtube_thumbnail'
@@ -82,7 +82,7 @@ const VideoCard = () => {
                 </div>
                 <div className='col-8'>
                   <div className='title'>
-                    <Link to='/'>ReactJS Tutorial Full Project</Link>
+                    <Link to='/'>{item.snippet.title}</Link>
                   </div>
                 </div>
                 <div className='col-2 d-flex justify-content-center align-content-center position-relative'>
@@ -101,7 +101,7 @@ const VideoCard = () => {
               <div className='row'>
                 <div className='col-2'></div>
                 <div className='col-10 bottomTypo'>
-                  <Link to='/'>Nick's Strength and Power</Link>
+                  <Link to='/'>{item.snippet.channelTitle}</Link>
                 </div>
                 <div className='col-2'></div>
               </div>
