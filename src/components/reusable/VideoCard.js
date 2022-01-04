@@ -73,19 +73,23 @@ const VideoCard = ({ item }) => {
             </Link>
           </div>
           <div className='v_title'>
-            <div className='container'>
-              <div className='row d-flex justify-content-center align-content-center'>
+            <div className='container gx-0'>
+              <div className='row d-flex justify-content-center g-0 '>
                 <div className='col-2 channelLogo'>
                   <Link to='/'>
                     <img src='./account2.svg' alt='youtube_account' />
                   </Link>
                 </div>
-                <div className='col-8'>
+                <div className='col-9'>
                   <div className='title'>
-                    <Link to='/'>{item.snippet.title}</Link>
+                    <Link to='/'>
+                      {item.snippet.title.length > 61
+                        ? item.snippet.title.slice(0, 61) + '...'
+                        : item.snippet.title.slice(0, 61)}
+                    </Link>
                   </div>
                 </div>
-                <div className='col-2 d-flex justify-content-center align-content-center position-relative'>
+                <div className='col-1 d-flex justify-content-center align-content-center position-relative'>
                   <div className='v_dropdown'>
                     <button
                       className='v_btn-dropdown'

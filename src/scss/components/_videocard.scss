@@ -57,7 +57,10 @@
           align-items: center;
         }
         .title {
+          width: 100%;
+          padding: 0 0.5rem 0 0;
           a {
+            width: 100%;
             font-size: 0.875rem;
             text-decoration: none;
             color: $grey900;
