@@ -15,8 +15,8 @@ const Navbar = () => {
     <>
       <div className='n_container'>
         {/* DESKTOP STARTS */}
-        <div className='container desktop'>
-          <div className='row n_row'>
+        <div className='container desktop px-0'>
+          <div className='row n_row  px-0'>
             <div className='col-3 laptop-left'>
               <button
                 className='n_button'

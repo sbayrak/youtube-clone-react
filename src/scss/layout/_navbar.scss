@@ -4,6 +4,9 @@
   width: 100%;
   z-index: 999;
   background-color: $bg-color;
+  height: 8vh;
+  display: flex;
+  align-items: center;
   .desktop {
     @media (max-width: 768px) {
       display: none;
@@ -80,7 +83,7 @@
       }
       .n_right {
         display: flex;
-        justify-content: center;
+        justify-content: flex-end;
         align-items: center;
 
         .left {
