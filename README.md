@@ -4,9 +4,9 @@ Simple clone version of YouTube.
 
 # Production Links
 
-[YouTube Clone](https://github.com/sbayrak) <br> <br>
+[YouTube Clone](http://youtube-clone-react-ten.vercel.app/) <br> <br>
 
-> Production links will be provided later.
+> Production link is available. But since its still under development, it may not look like what you expect.
 
 <br>
 

@@ -109,11 +109,11 @@ const Home = () => {
             <p>Home page</p>
             <div className='v_root'>
               <div className='container-fluid gx-4'>
-                <div className='row gx-3 my-5'>
+                <div className='row gx-3 gy-2'>
                   {videoContext.loading
                     ? SkeletonQuantity
                     : videoContext.videos.items.map((item, index) => (
-                        <div className='col-3' key={index}>
+                        <div className='col-3 my-3' key={index}>
                           <VideoCard item={item} />
                         </div>
                       ))}

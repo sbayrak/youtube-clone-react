@@ -46,6 +46,7 @@ const VideoCard = ({ item }) => {
       </li>
     </ul>
   );
+  console.log(item);
   return (
     <div className='v_container'>
       <div className='v_wrapper'>
@@ -53,7 +54,7 @@ const VideoCard = ({ item }) => {
           <div className='v_img'>
             <Link to={`/watch?v=${item.id}`}>
               <img
-                src='./thumbnail.jpg'
+                src={item.snippet.thumbnails.medium.url}
                 alt='youtube_thumbnail'
                 className='thumbnail'
               />
@@ -83,9 +84,9 @@ const VideoCard = ({ item }) => {
                 <div className='col-9'>
                   <div className='title'>
                     <Link to='/'>
-                      {item.snippet.title.length > 61
-                        ? item.snippet.title.slice(0, 61) + '...'
-                        : item.snippet.title.slice(0, 61)}
+                      {item.snippet.title.length > 50
+                        ? item.snippet.title.slice(0, 50) + '...'
+                        : item.snippet.title.slice(0, 50)}
                     </Link>
                   </div>
                 </div>
@@ -102,19 +103,19 @@ const VideoCard = ({ item }) => {
                 </div>
               </div>
 
-              <div className='row'>
-                <div className='col-2'></div>
-                <div className='col-10 bottomTypo'>
+              <div className='row g-0 gx-0'>
+                <div className='col-2 g-0 gx-0'></div>
+                <div className='col-10 bottomTypo g-0 gx-0'>
                   <Link to='/'>{item.snippet.channelTitle}</Link>
                 </div>
-                <div className='col-2'></div>
+                <div className='col-2 g-0 gx-0'></div>
               </div>
-              <div className='row'>
-                <div className='col-2'></div>
-                <div className='col-10 bottomTypo'>
+              <div className='row g-0 gx-0'>
+                <div className='col-2 g-0 gx-0'></div>
+                <div className='col-10 bottomTypo g-0 gx-0'>
                   <Link to='/'>3.5K views • 5 hours ago</Link>
                 </div>
-                <div className='col-2'></div>
+                <div className='col-2 g-0 gx-0'></div>
               </div>
             </div>
           </div>
